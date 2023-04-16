@@ -16,3 +16,14 @@ const generateColorPalette = () => {
 };
 const buttonRandomColor = document.querySelector('#button-random-color');
 buttonRandomColor.addEventListener('click', generateColorPalette);
+
+const generatePixelBoard = () => {
+  const pixelBoard = document.getElementById('pixel-board');
+  for (let index = 0; index < 25; index += 1) {
+    const pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    pixelBoard.appendChild(pixel);
+  }
+};
+
+window.addEventListener('load', generatePixelBoard);
