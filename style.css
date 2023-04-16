@@ -1,0 +1,28 @@
+#title {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.color {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#color1 {
+background-color: black;
+}
+
+#color2 {
+  background-color: blue;
+}
+
+#color3 {
+  background-color: green;
+}
+
+#color4 {
+  background-color: red;
+}
