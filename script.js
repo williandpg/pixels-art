@@ -17,18 +17,3 @@ buttonRandomColor.addEventListener('click', () => {
     localStorage.setItem(`color_${index}`, colors[index].style.backgroundColor);
   }
 });
-
-window.addEventListener('load', () => {
-  const colors = document.querySelectorAll('.color');
-
-  for (let index = 0; index < colors.length; index += 1) {
-    const storedColor = localStorage.getItem(`color_${index}`);
-    if (storedColor) {
-      colors[0].style.backgroundColor = 'black';
-      colors[index].style.backgroundColor = storedColor;
-    } else {
-      colors[index].style.backgroundColor = generateColor();
-      localStorage.setItem(`color_${index}`, colors[index].style.backgroundColor);
-    }
-  }
-});
