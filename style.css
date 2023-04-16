@@ -5,33 +5,22 @@ header {
 
 .color {
   border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
 }
 
 #color1 {
   background-color: black;
 }
 
-#color2 {
-  background-color: #8c7404;
-}
-
-#color3 {
-  background-color: #fc9c3c;
-}
-
-#color4 {
-  background-color: #dc2c04;
-}
-
 button {
-  width: 80px;
-  height: 40px;
+  width: 100px;
+  height: 50px;
 }
 
 #pixel {
   border: 1px solid black;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
