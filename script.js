@@ -31,7 +31,6 @@ function createPixels() {
     }
   }
 }
-createPixels();
 
 const colorPalette = document.getElementById('color-palette');
 const selectColor = (event) => {
@@ -43,3 +42,9 @@ const selectColor = (event) => {
   selectedColor.classList.add('selected');
 };
 colorPalette.addEventListener('click', selectColor);
+
+window.onload = () => {
+  generateColorPalette();
+  createPixels();
+  selectColor();
+};
