@@ -17,13 +17,18 @@ const generateColorPalette = () => {
 const buttonRandomColor = document.querySelector('#button-random-color');
 buttonRandomColor.addEventListener('click', generateColorPalette);
 
-const generatePixelBoard = () => {
-  const pixelBoard = document.getElementById('pixel-board');
-  for (let index = 0; index < 25; index += 1) {
-    const pixel = document.createElement('div');
-    pixel.classList.add('pixel');
-    pixelBoard.appendChild(pixel);
+const pixelBoard = document.getElementById('pixel-board');
+function createPixels() {
+  for (let lines = 0; lines < 5; lines += 1) {
+    const line = document.createElement('div');
+    line.className = 'lines';
+    pixelBoard.appendChild(line);
+    for (let cell = 0; cell < 5; cell += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixel.id = 'cell';
+      line.appendChild(pixel);
+    }
   }
-};
-
-window.addEventListener('load', generatePixelBoard);
+}
+createPixels();
