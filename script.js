@@ -19,19 +19,19 @@ const buttonRandomColor = document.querySelector('#button-random-color');
 buttonRandomColor.addEventListener('click', generateColorPalette);
 
 const pixelBoard = document.getElementById('pixel-board');
-function createPixels() {
+const createPixels = () => {
   for (let lines = 0; lines < 5; lines += 1) {
     const line = document.createElement('div');
     line.className = 'lines';
-    pixelBoard.appendChild(line);
     for (let cell = 0; cell < 5; cell += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       pixel.id = 'cell';
+      pixelBoard.appendChild(line);
       line.appendChild(pixel);
     }
   }
-}
+};
 createPixels();
 
 const colorPalette = document.getElementById('color-palette');
