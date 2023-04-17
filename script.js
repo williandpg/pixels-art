@@ -9,13 +9,28 @@ const generateColor = () => {
 
 const generateColorPalette = () => {
   const colors = document.querySelectorAll('.color');
+  const colorPalette = [];
   for (let index = 0; index < 4; index += 1) {
+    const color = generateColor();
+    colorPalette.push(color);
     colors[index].style.backgroundColor = generateColor();
     colors[0].style.backgroundColor = 'black';
   }
+  localStorage.setItem('colorPalette', JSON.stringify(colorPalette));
 };
 const buttonRandomColor = document.querySelector('#button-random-color');
 buttonRandomColor.addEventListener('click', generateColorPalette);
+
+window.addEventListener('load', () => {
+  if (localStorage.getItem('colorPalette')) {
+    const colors = document.querySelectorAll('.color');
+    const colorPalette = JSON.parse(localStorage.getItem('colorPalette'));
+    for (let index = 0; index < colorPalette.length; index += 1) {
+      colors[index].style.backgroundColor = colorPalette[index];
+      colors[0].style.backgroundColor = 'black';
+    }
+  }
+});
 
 const pixelBoard = document.getElementById('pixel-board');
 function createPixels() {

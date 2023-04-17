@@ -11,22 +11,6 @@
   cursor: pointer;
 }
 
-#color1 {
-  background-color: black;
-}
-
-#color2 {
-  background-color: blue;
-}
-
-#color3 {
-  background-color: green;
-}
-
-#color4 {
-  background-color: red;
-}
-
 #button-random-color {
   width: 80px;
   height: 40px;
