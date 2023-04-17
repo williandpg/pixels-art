@@ -17,6 +17,12 @@ const generateColorPalette = () => {
 const buttonRandomColor = document.querySelector('#button-random-color');
 buttonRandomColor.addEventListener('click', generateColorPalette);
 
+const clearBoardButton = document.getElementById('clear-board');
+clearBoardButton.addEventListener('click', () => {
+  const pixels = document.querySelectorAll('.pixel');
+  pixels.forEach(pixel => pixel.style.backgroundColor = 'white');
+});
+
 const pixelBoard = document.getElementById('pixel-board');
 function createPixels() {
   for (let lines = 0; lines < 5; lines += 1) {
