@@ -13,15 +13,10 @@ const generateColorPalette = () => {
     colors[index].style.backgroundColor = generateColor();
     colors[0].style.backgroundColor = 'black';
   }
+  localStorage.setItem('colorPalette', JSON.stringify(colors));
 };
 const buttonRandomColor = document.querySelector('#button-random-color');
 buttonRandomColor.addEventListener('click', generateColorPalette);
-
-const clearBoardButton = document.getElementById('clear-board');
-clearBoardButton.addEventListener('click', () => {
-  const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach(pixel => pixel.style.backgroundColor = 'white');
-});
 
 const pixelBoard = document.getElementById('pixel-board');
 function createPixels() {
@@ -49,3 +44,7 @@ const selectColor = (event) => {
   selectedColor.classList.add('selected');
 };
 colorPalette.addEventListener('click', selectColor);
+
+window.onload = () => {
+  generateColorPalette();
+};
