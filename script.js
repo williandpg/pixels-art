@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const generateColor = () => {
   const lettersNumbers = '0123456789ABCDEF';
   let colorHexa = '#';
@@ -75,3 +76,12 @@ const pixels = document.querySelectorAll('.pixel');
 pixels.forEach((pixel) => {
   pixel.addEventListener('click', paintPixel);
 });
+
+const clearBoard = () => {
+  const pixelClear = document.querySelectorAll('.pixel');
+  pixelClear.forEach((pixel) => {
+    pixel.style.backgroundColor = 'white';
+  });
+};
+const clearBoardButton = document.getElementById('clear-board');
+clearBoardButton.addEventListener('click', clearBoard);
