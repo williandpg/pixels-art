@@ -62,26 +62,16 @@ const selectColor = (event) => {
 };
 colorPalette.addEventListener('click', selectColor);
 
-const colors = document.querySelectorAll('.color');
+const getSelectedColor = () => {
+  const selectedColorElement = document.querySelector('.selected');
+  return selectedColorElement.style.backgroundColor;
+};
+const paintPixel = (event) => {
+  const selectedColor = getSelectedColor();
+  const pixel = event.target;
+  pixel.style.backgroundColor = selectedColor;
+};
 const pixels = document.querySelectorAll('.pixel');
-const selectColors = (event) => {
-  colors.forEach((colorHexa) => colorHexa.classList.remove('selected'));
-  event.target.classList.add('selected');
-  localStorage.setItem('selectedColor', event.target.style.backgroundColor);
-};
-const fillPixel = (event) => {
-  if (event.target.classList.contains('pixel')) {
-    // eslint-disable-next-line no-param-reassign
-    event.target.style.backgroundColor = localStorage.getItem('selectedColor');
-  }
-};
-colors.forEach((colorHexa) => colorHexa.addEventListener('click', selectColors));
-pixels.forEach((pixel) => pixel.addEventListener('click', fillPixel));
-const storedColor = localStorage.getItem('selectedColor');
-if (storedColor) {
-  colors.forEach((colorHexa) => {
-    if (colorHexa.style.backgroundColor === storedColor) {
-      colorHexa.classList.add('selected');
-    }
-  });
-}
+pixels.forEach((pixel) => {
+  pixel.addEventListener('click', paintPixel);
+});
