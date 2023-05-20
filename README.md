@@ -16,7 +16,7 @@ Este é um projeto disponibilizado pela Trybe que consiste na implementação de
 - Ajustar o Tamanho do Quadro: A pessoa usuária poderá inserir um novo tamanho para o quadro de pixels, ajustando-o conforme desejado, sendo o tamanho minimo de 5x5 e máximo 50x50.
 
 ## Status do Projeto
-O projeto está finalizado com todos os requisitos atendidos. Onde foram realizados 10 requisitos do projeto e 3 requisitos bônus.
+O projeto está finalizado com todos os requisitos atendidos. Onde foram realizados 12 requisitos do projeto e 3 requisitos bônus.
 
 ## Suporte
 Se você tiver alguma dúvida relacionado a este projeto, sinta-se à vontade para abrir uma "Issue" aqui no GitHub.
